@@ -1,0 +1,12 @@
+
+
+The piece of code is not the complete one, but can be used to encode an image file in java and display it in javascript.
+
+ StringBuilder prefixToImageEncodedString=new StringBuilder("data:image/*;base64,");
+		ResponseDTO responseDTO=new ResponseDTO();
+	
+	    InputStream in =new BufferedInputStream(new FileInputStream("D:/resources/Australia.jpg"));
+	   
+	    byte[] bytes=ImageIO.read(in).toString().getBytes();
+	    String encodedfile = new String(Base64.encode(bytes), "UTF-8");
+	   String imageBaseURL=prefixToImageEncodedString.append(encodedfile).toString();
